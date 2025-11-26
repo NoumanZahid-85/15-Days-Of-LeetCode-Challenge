@@ -30,26 +30,47 @@
 //         dfs(root)    
 //         return self.result
  
-// Soution 2 in C++.
+// Soution 2 in C++, it is very inefficent code O(n*2).
+// class Solution {
+// public:
+//     // Height helper function.
+    
+//     int height(TreeNode* root){
+//         if(root == NULL){
+//             return 0;
+//         }
+//         int leftHt = height(root->left);
+//         int rightHt = height(root->right);
+//         return 1 + max(leftHt, rightHt);
+//     }
+//     int diameterOfBinaryTree(TreeNode* root) {
+//         if(root == NULL){
+//             return 0;
+//         }
+//         int leftDiameter = diameterOfBinaryTree(root->left);
+//         int rightDiameter = diameterOfBinaryTree(root->right);
+//         int currentDiameter = height(root->left) + height(root->right);
+//         // ({}) it is initializer list index for compering more than two numbers.
+//         return max({leftDiameter, rightDiameter, currentDiameter});
+//     }
+// };
+
+// The final and most efficient code with TC of O(n) linear.
 class Solution {
 public:
-    // Height helper function.
+    int ans = 0;
     int height(TreeNode* root){
         if(root == NULL){
             return 0;
         }
         int leftHt = height(root->left);
         int rightHt = height(root->right);
-        return 1 + max(leftHt, rightHt);
+        ans = max(ans, leftHt + rightHt); // Current diameter of root node.
+        return max(leftHt, rightHt) + 1;
     }
-    int diameterOfBinaryTree(TreeNode* root) {
-        if(root == NULL){
-            return 0;
-        }
-        int leftDiameter = diameterOfBinaryTree(root->left);
-        int rightDiameter = diameterOfBinaryTree(root->right);
-        int currentDiameter = height(root->left) + height(root->right);
-        // ({}) it is initializer list index for compering more than two numbers.
-        return max({leftDiameter, rightDiameter, currentDiameter});
+
+    int diameterOfBinaryTree(TreeNode* root){
+        height(root);
+        return ans;
     }
 };
