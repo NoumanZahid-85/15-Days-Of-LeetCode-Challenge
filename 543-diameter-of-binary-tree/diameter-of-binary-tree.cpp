@@ -66,7 +66,7 @@ public:
         int leftHt = height(root->left);
         int rightHt = height(root->right);
         // Formula for Current Diameter = leftHeight + rightHeight
-        ans = max(ans, leftHt + rightHt); // Current diameter of root node.
+        ans = max(ans, leftHt + rightHt); // Current diameter of root node and keep track of maximum diameter.
         return max(leftHt, rightHt) + 1;
     }
 
