@@ -15,6 +15,7 @@ public:
         
         // Solution No. 02:
         // Time Complexity is O(n)
+        // This is Kadane's Algorithm
         int curSum = 0;
         for(int i = 0; i < n; i++){
             curSum = curSum + nums[i];  
