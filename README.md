@@ -56,7 +56,8 @@ This challenge strengthened my ability to recognize and apply **common LeetCode 
 ## 💻 Languages Used
 
 - **C++ (Primary)** – Performance-focused, interview-style implementations  
-- **Python (Selective)** – Clear and expressive algorithmic solutions  
+- **Python (Selective)** – Clear and expressive algorithmic solutions
+- **Java(secondary)** - Cross platform smooth running.
 
 ---
 
@@ -72,7 +73,9 @@ Some notable problems included in this challenge:
 - Longest Common Prefix  
 - Squares of a Sorted Array  
 - Best Time to Buy and Sell Stock  
-- Longest Common Subsequence  
+- Longest Common Subsequence
+- Floyds Pattern
+- Butterfly Pattern
 
 ---
 
